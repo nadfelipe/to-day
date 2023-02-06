@@ -1,0 +1,16 @@
+<div class="todos">
+    <mat-tab-group (selectedTabChange)="setFilterList($event)">
+        <mat-tab label="Todos">
+            <app-add-todo [todos]="todos"></app-add-todo>
+            <app-list-todos [todos]="todos" [filterType]="filterList"></app-list-todos>
+        </mat-tab>
+        <mat-tab label="Ativos">
+            <app-add-todo [todos]="todos"></app-add-todo>
+            <app-list-todos [todos]="todos" [filterType]="filterList"></app-list-todos>
+        </mat-tab>
+        <mat-tab label="Completos">
+            <app-add-todo [todos]="todos"></app-add-todo>
+            <app-list-todos [todos]="todos" [filterType]="filterList"></app-list-todos>
+        </mat-tab>
+    </mat-tab-group>
+</div>
