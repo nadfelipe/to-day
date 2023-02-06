@@ -1,17 +1,19 @@
 <div class="list-todos">
-    <div *ngFor="let todo of todos; let i = index;" class="todo {{ todo.completed ? 'done' : ''}}">
-        <div class="todo-content" *ngIf="filterType == 'Completos' && todo.completed == true && todo.deleted !== true">
+    <div *ngFor="let todo of todos; let i = index;" class="todo d-flex {{ todo.completed ? 'done' : ''}}">
+        <div class="todo-content d-flex visible" *ngIf="filterType == 'Completos' && todo.completed == true && todo.deleted !== true">
             <input type="checkbox" class="checkbox" checked="{{ todo.completed ? 'checked' : ''}}" (click)="toogleDone(i)"/>
             <p class="content" (click)="toogleDone(i)">{{ todo.content }}</p>
         </div>
-        <div class="todo-content" *ngIf="filterType == 'Ativos' && todo.completed !== true && todo.deleted !== true">
+        <div class="todo-content d-flex visible" *ngIf="filterType == 'Ativos' && todo.completed !== true && todo.deleted !== true">
             <input type="checkbox" class="checkbox" checked="{{ todo.completed ? 'checked' : ''}}" (click)="toogleDone(i)"/>
             <p class="content" (click)="toogleDone(i)">{{ todo.content }}</p>
         </div>
-        <div class="todo-content" *ngIf="filterType == 'Todos' && todo.deleted !== true">
+        <div class="todo-content d-flex visible" *ngIf="filterType == 'Todos' && todo.deleted !== true">
             <input type="checkbox" class="checkbox" checked="{{ todo.completed ? 'checked' : ''}}" (click)="toogleDone(i)"/>
             <p class="content" (click)="toogleDone(i)">{{ todo.content }}</p>
         </div>
         <button *ngIf="filterType == 'Completos' && todo.completed == true && todo.deleted !== true" class="delete" (click)="deleteTodo(i)"><mat-icon>delete</mat-icon></button>
     </div>
+    
+    <button *ngIf="filterType == 'Completos' && anyCompleted == true" type="button" (click)="deleteAll()" mat-flat-button><mat-icon>delete</mat-icon>Apagar Tudo</button>
 </div>

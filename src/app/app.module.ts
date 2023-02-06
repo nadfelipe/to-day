@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ListTodosComponent } from './components/list-todos/list-todos.component';
 import { AddTodoComponent } from './components/add-todo/add-todo.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AddTodoComponent } from './components/add-todo/add-todo.component';
     MatTabsModule,
     NoopAnimationsModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
