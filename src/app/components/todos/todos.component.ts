@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Todo } from 'src/app/models/Todo.model';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
   selector: 'app-todos',
   templateUrl: './todos.component.html',
-  styleUrls: ['./todos.component.scss']
+  styleUrls: ['./todos.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 
 export class TodosComponent implements OnInit {
