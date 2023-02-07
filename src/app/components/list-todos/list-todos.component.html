@@ -1,5 +1,5 @@
-<div class="list-todos">
-    <div *ngFor="let todo of todos; let i = index;" class="todo d-flex {{ todo.completed ? 'done' : ''}}">
+<div class="list-todos d-flex flex-column align-items-end">
+    <div *ngFor="let todo of todos; let i = index;" class="todo d-flex align-items-center justify-content-between {{ todo.completed ? 'done' : ''}}">
         <div class="todo-content d-flex visible" *ngIf="filterType == 'Completos' && todo.completed == true && todo.deleted !== true">
             <input type="checkbox" class="checkbox" checked="{{ todo.completed ? 'checked' : ''}}" (click)="toogleDone(i)"/>
             <p class="content" (click)="toogleDone(i)">{{ todo.content }}</p>
@@ -15,5 +15,10 @@
         <button *ngIf="filterType == 'Completos' && todo.completed == true && todo.deleted !== true" class="delete" (click)="deleteTodo(i)"><mat-icon>delete</mat-icon></button>
     </div>
     
-    <button *ngIf="filterType == 'Completos' && anyCompleted == true" type="button" (click)="deleteAll()" mat-flat-button><mat-icon>delete</mat-icon>Apagar Tudo</button>
+    <div class="align-self-center">
+        <p *ngIf="todos.length > 0 && filterType == 'Completos' && anyCompleted == false &&  allDeleted == false">Nenhum item completo ainda.</p>
+        <p *ngIf="todos.length <= 0 || allDeleted == true">Nenhum item adicionado ainda.</p>
+    </div>
+    
+    <button class="mt-4" *ngIf="filterType == 'Completos' && anyCompleted == true" type="button" (click)="deleteAll()" mat-flat-button color="primary"><mat-icon>delete</mat-icon>Apagar Tudo</button>
 </div>

@@ -1,30 +1,17 @@
 .todo-input {
-    margin-right: 1rem;
+	margin: 0 1rem -1.25em 0;
 	width: 100%;
 	font-size: 1em;
-    margin-bottom: -1.25em;
 }
 
 .todo-submit {
 	display: block;
 	width: 100%;
-	max-width: 200px;
-	appearance: none;
-	border: none;
-	outline: none;
-	background: none;
-	border-radius: 5px;
+	max-width: 100px;
+	padding: 10px 15px;	
 
-	background-color: #FE4880;
-	color: #FFF;
-	margin: 15px auto;
-
-	padding: 10px 15px;
-	font-size: 1.2em;
-	font-weight: 600;
-
-    &.disabled {
-        background-color: #7c7c7c;
+    &:disabled {
         cursor: not-allowed;
+		pointer-events: unset;
     }
 }

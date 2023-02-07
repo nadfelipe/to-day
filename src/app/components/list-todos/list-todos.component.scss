@@ -41,12 +41,9 @@
 }
 
 .todo {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+    width: 100%;
 
     .todo-content {
-        display: flex;
         .content {
             margin: 0 0 0 1rem;
             user-select: none;

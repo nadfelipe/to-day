@@ -1,11 +1,11 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Todo } from 'src/app/models/Todo.model';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
   selector: 'app-add-todo',
   templateUrl: './add-todo.component.html',
-  styleUrls: ['./add-todo.component.scss'],
+  styleUrls: ['./add-todo.component.scss']
 })
 export class AddTodoComponent {
   @Input() todos: Todo[] = []

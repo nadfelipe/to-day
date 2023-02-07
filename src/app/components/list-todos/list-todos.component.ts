@@ -12,6 +12,7 @@ export class ListTodosComponent {
   @Input() filterType: string = "";
 
   anyCompleted: boolean;
+  allDeleted: boolean;
 
   constructor(private localStorage: LocalStorageService) {}
 
@@ -61,5 +62,10 @@ export class ListTodosComponent {
     this.anyCompleted = this.todos.filter(v => {return v.completed}).some((v) => {
       return v.deleted == false
     })
+
+    this.allDeleted = false;
+
+    if(this.todos.filter(v => {return v.deleted}).length == this.todos.length)
+      this.allDeleted = true;    
   }
 }

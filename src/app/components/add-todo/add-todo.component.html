@@ -1,7 +1,7 @@
 <form (submit)="addTodo(inputRef)" class="d-flex align-items-center justify-content-between">
     <mat-form-field class="todo-input">
         <mat-label>Tarefa</mat-label>
-        <input #inputRef matInput type="text" name="inputTodo" placeholder="Adicione uma tarefa..." [(ngModel)]="inputTodo">
+        <input #inputRef matInput type="text" name="inputTodo" placeholder="Adicione uma tarefa..." [(ngModel)]="inputTodo" color="accent">
     </mat-form-field>
-    <button type="submit" mat-flat-button [disabled]="!inputTodo">Adicionar</button>
+    <button class="todo-submit" type="submit" mat-flat-button color="primary" [disabled]="!inputTodo">Adicionar</button>
 </form>
