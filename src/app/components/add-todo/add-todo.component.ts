@@ -25,6 +25,9 @@ export class AddTodoComponent {
 
       this.inputTodo = "";
       el.focus();
+      
+      if (this.todos.filter(v => {return v.completed == false}).length >= 0 && this.todos.filter(v => {return v.completed == false}).length == 1)
+        window.location.reload()
     }
   }
 }
